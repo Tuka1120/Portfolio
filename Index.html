@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>My portfolio</title>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    </head>
+    <body>
+
+        <nav>
+            <ul>
+                <li><a href="#about">About </a></li>
+                <li><a href="#services">Services </a></li>
+                <li><a href="#contact">Contact </a></li>
+            </ul>
+        </nav>
+
+        <section id="about" class="about">
+            <div class="empty"></div>
+            <article>
+                <div class="title">
+                    <h1>Battulga Ganzorig</h1>
+                </div>
+                <div class="description">
+                    <p>Good day to you all who visit my portfolio! I am a University student, interested in programming languages such as CSS, JS, HTML etc. I am mainly focused to creat user interactive, aesthetic webapps. </p>
+                </div>
+            </article>
+        </section>
+
+        <section id="services" class="service service-html sticky">
+            <article>
+                <figure>
+                    <img src="img/HTML5_logo.png" width="200"/>
+                </figure>
+                <div class="text">
+                    <h2>HTML</h2>
+                    <p>There are several intermediate level functions I am able to do on HTML. For instance, Embedding Media & Content, Advanced Hyperlinks & Navigation, SEO-Friendly HTML etc. </p>
+                    <a href="https://en.wikipedia.org/wiki/HTML">More about HTML</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="service service-css sticky">
+            <article>
+                <figure>
+                    <img src="img/css_logo.png" width="200"/>
+                </figure>
+                <div class="text">
+                    <h2>CSS</h2>
+                    <p>I would say I am a upper intermediate on CSS, since there are many functions that I can manage to do such as Responsive Design & Layout, Advanced Selectors & Pseudo-Elements, Animations & Transitions, Positioning & Overlays etc.</p>
+                    <a href="https://en.wikipedia.org/wiki/CSS">More about CSS</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="service service-js sticky">
+            <article>
+                <figure>
+                    <img src="img/JavaScript-logo.png" width="200"/>
+                </figure>
+                <div class="text">
+                    <h2>JS</h2>
+                    <p>Functions that I am familiar on JS are pretty basics. For example, Event Handling, DOM Manipulation, Local Storage & Session Storage, ES6+ Features</p>
+                    <a href="https://en.wikipedia.org/wiki/JavaScript">More about JS</a>
+                </div>
+            </article>
+        </section>
+
+        <section id="contact" class="contact full-screen">
+
+            <a href="mailto:Battulga.priv@gmail.com"> Battulga.priv@gmail.com </a>
+
+        </section>
+
+        <script>
+            
+            let emptyElement = document.querySelector('.about .empty');
+            let titleElement = document.querySelector('.about .title');
+            let descriptionElement = document.querySelector('.about .description');
+
+
+            let AllFigures = document.querySelectorAll('.service figure');
+
+            AllFigures.forEach( function (element) {
+                /*console.log(element);*/
+            })
+
+            window.addEventListener( 'mousemove', handleMouseMove );
+            
+            function handleMouseMove( event ) {
+                emptyElement.style.flexBasis = (window.innerWidth - event.clientX) + 'px';
+                titleElement.style.flexBasis = (window.innerWidth - event.clientY ) + 'px';
+                descriptionElement.style.flexBasis = (window.innerWidth - (event.clientY / 2)) + 'px';
+
+
+
+                AllFigures.forEach( function (element) {
+                    element.style.flexBasis =  event.clientX + 'px';            
+                })
+
+            }
+
+        </script>
+
+    </body>
+</html>
